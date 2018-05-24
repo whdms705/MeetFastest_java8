@@ -52,7 +52,7 @@ public class Sub10 {
 				);
 		
 		System.out.println(map1.toString());
-		//output: {35=Greg, 20=John, 21=Jane, 22=Sara}
+		//output: {35=Greg, 20=John, 21=Jane, 22=Sara}   
 		
 		
 		//Function.identity()는 실제 요소값을 가져온다는데 확인해봄
