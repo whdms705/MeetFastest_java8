@@ -20,12 +20,13 @@ public class Practice02_9 {
 			ArrayList<Integer> childList = new ArrayList<Integer>();
 			childList.add(i);
 			childList.add(i+1);
-			//childList.add
 			parentList.add(childList);
 		}
-		
 		Stream<ArrayList<Integer>> s = parentList.stream();
-		ArrayList<Integer> result = s.reduce(new ArrayList<Integer>(),(a,b) ->{
+		
+		
+		//1번 형태
+		Optional<ArrayList<Integer>> result1 = s.reduce((a,b) ->{
 			Iterator<Integer> iterator = b.iterator();
 		    while (iterator.hasNext()) {
 		        a.add(iterator.next());
@@ -33,12 +34,40 @@ public class Practice02_9 {
 		    return a;
 		});
 		
-		for(Integer i : result){
+		for(Integer i : result1.get()){
 			System.out.println(i);
 		}
 		
+		//2번 형태
+		/*ArrayList<Integer> result2 = s.reduce(new ArrayList<Integer>(),(a,b) ->{
+			Iterator<Integer> iterator = b.iterator();
+		    while (iterator.hasNext()) {
+		        a.add(iterator.next());
+		    }
+		    return a;
+		});
+		
+		for(Integer i : result2){
+			System.out.println(i);
+		}*/
 		
 		
+		//3번 형태  reduce(identity,accumulator,combiner)
+		/*identity - 초기값
+		accumulator - 이전 연산결과와 스트림의 요소에 수행할 연산
+		combiner - 병렬처리된 결과를 합치는데 사용할 연산(병렬 스트림)*/
+		
+		/*ArrayList<Integer> result3 = s.reduce(new ArrayList<Integer>(),(a,b) ->{
+			a.addAll(b);
+		    return a; },
+		    (a,b) ->{
+				a.addAll(b);
+			    return a;
+		});
+		
+		for(Integer i : result3){
+			System.out.println(i);
+		}*/
 		
 
 	}
