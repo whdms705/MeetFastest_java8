@@ -1,5 +1,8 @@
 package MeetFastest_java8.learing.practice02;
 
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 /*
  * @Content :  "2.13 병렬 스트림" 절에서 설명한 것처럼 AtomicInteger 배열을 업데이트하는 방법으로 
@@ -13,8 +16,15 @@ public class Practice02_12 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		 ArrayList<String> list = new ArrayList<String>();
 		 
+		 Stream<String> words = list.stream();
+		 AtomicInteger ai = new AtomicInteger();
+		 words.parallel().forEach(s -> {
+			 if(s.length()<4) ai.getAndIncrement();
+		 });
 		 
+		 System.out.println(ai.get());
 		 
 	}
 
