@@ -17,6 +17,11 @@ public class Practice02_12 {
 		// TODO Auto-generated method stub
 		
 		 ArrayList<String> list = new ArrayList<String>();
+		 list.add("qwwewewe");
+		 list.add("qwwewewe233");
+		 list.add("qww");
+		 list.add("qwwwe");
+		 list.add("qw2");
 		 
 		 Stream<String> words = list.stream();
 		 AtomicInteger ai = new AtomicInteger();
