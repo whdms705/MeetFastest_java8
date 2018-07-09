@@ -15,26 +15,15 @@ public class Practice02_11 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] arr1 = {"3232","sdsdsd","ddw","12sdsd","123ccxxc"};
-		String[] arr2 = {"1111","zxzx","bgbg","dddd","32972397"};
-		String[] arr3 = {"33333","332","33212","3326565","33244444"};
-		Stream<String> arrList1 = Stream.of(arr1);
-		Stream<String> arrList2 = Stream.of(arr2);
-		
-		//List<String[]> list = Stream.of(arr1,arr2).collect(Collectors.toList());
-		
-		//이는 떨어진 위치에는 병행 set 연산은 스레드에 안전하기 때문이다. 이게 무슨 말일까?
-		//01. concat을 이용해서 합치기
-		List<String> result1 = Stream.concat(arrList1, arrList2).collect(Collectors.toList());
-		//02. flatMap을 이용해서 합치기
-		List<String> result2 = Stream.of(arr1,arr2,arr3).flatMap(Arrays::stream).collect(Collectors.toList());
-		
-		
-		for(String s : result2){
-			System.out.format("%s", s);
-			System.out.println();
-		}
-		
+
+		Stream<Integer> i = Stream.of(1,2,3);
+	      Stream<Integer> j = Stream.of(4,5,6);
+	      
+	      List<Integer> q = Stream.concat(i,j).collect(Collectors.toList());
+	      List<Integer> q1 = Stream.of(i,j).reduce(Stream::concat).orElseGet(Stream::empty).collect(Collectors.toList());
+	      List<Integer> q2 = Stream.of(i,j).flatMap(s->s).collect(Collectors.toList());
+	      
+	      q2.forEach(System.out::println);
 	}
 
 }

@@ -1,6 +1,5 @@
 package MeetFastest_java8.learing.practice02;
 
-
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.*;
@@ -38,6 +37,7 @@ public class Practice02_13 {
 		
 		
 		System.out.println(cnt);
+
 	}
 
 }
