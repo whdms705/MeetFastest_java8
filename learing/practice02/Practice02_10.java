@@ -12,7 +12,7 @@ public class Practice02_10 {
 		list.add(6.12);
 		list.add(10.11);
 		
-		
+		long count = list.stream().count();
 		Double result = list.stream().reduce(0.0, (a,b) -> a+b);
 		System.out.println("result : "+result/list.size());
 		//https://stackoverflow.com/questions/23658956/finding-average-using-reduce-and-collect

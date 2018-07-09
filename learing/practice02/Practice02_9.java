@@ -15,17 +15,32 @@ public class Practice02_9 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generaArrayList<E>d stub
+		//1. list setting
 		ArrayList<ArrayList<Integer>> parentList = new ArrayList<ArrayList<Integer>>();
 		for(int i=0;i<5;i++){
 			ArrayList<Integer> childList = new ArrayList<Integer>();
 			childList.add(i);
+			System.out.println(i);
 			childList.add(i+1);
-			//childList.add
+			System.out.println(i+1);
 			parentList.add(childList);
 		}
-		
+		System.out.println("============================");
+		//2. reduce setting
 		Stream<ArrayList<Integer>> s = parentList.stream();
-		ArrayList<Integer> result = s.reduce(new ArrayList<Integer>(),(a,b) ->{
+		
+		/*Optional<ArrayList<Integer>> result = s.reduce((a,b) -> {
+			a.addAll(b);
+			return a;
+		});
+		
+		
+		for(Integer i : result.get()){
+			System.out.println(i);
+		}*/
+		
+		/*ArrayList<Integer> result = s.reduce(new ArrayList<Integer>(),(a,b) ->{
+			
 			Iterator<Integer> iterator = b.iterator();
 		    while (iterator.hasNext()) {
 		        a.add(iterator.next());
@@ -37,6 +52,13 @@ public class Practice02_9 {
 			System.out.println(i);
 		}
 		
+		*/
+		
+		ArrayList<Integer> result = s.reduce(new ArrayList<Integer>(), (a,b) -> {a.addAll(b); return a;},(a,b) -> {a.addAll(b); return a;});
+		
+		for(Integer i : result){
+			System.out.println(i);
+		}
 		
 		
 		
