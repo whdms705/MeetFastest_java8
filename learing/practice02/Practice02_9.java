@@ -15,10 +15,12 @@ public class Practice02_9 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generaArrayList<E>d stub
+		//1. list setting
 		ArrayList<ArrayList<Integer>> parentList = new ArrayList<ArrayList<Integer>>();
 		for(int i=0;i<5;i++){
 			ArrayList<Integer> childList = new ArrayList<Integer>();
 			childList.add(i);
+			System.out.println(i);
 			childList.add(i+1);
 			parentList.add(childList);
 		}
@@ -37,7 +39,7 @@ public class Practice02_9 {
 		for(Integer i : result1.get()){
 			System.out.println(i);
 		}
-		
+
 		//2번 형태
 		/*ArrayList<Integer> result2 = s.reduce(new ArrayList<Integer>(),(a,b) ->{
 			Iterator<Integer> iterator = b.iterator();
@@ -50,7 +52,6 @@ public class Practice02_9 {
 		for(Integer i : result2){
 			System.out.println(i);
 		}*/
-		
 		
 		//3번 형태  reduce(identity,accumulator,combiner)
 		/*identity - 초기값

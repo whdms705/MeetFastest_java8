@@ -10,7 +10,6 @@ import java.util.stream.Stream;
  * 				각 카운터를 안전하게 증가시키기 위해 원자적 메서드인 getAndIncrement를 사용한다.
  * 
  */
-
 public class Practice02_12 {
 
 	public static void main(String[] args) {
@@ -30,7 +29,6 @@ public class Practice02_12 {
 		 });
 		 
 		 System.out.println(ai.get());
-		 
 	}
 
 }
