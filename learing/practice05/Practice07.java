@@ -4,6 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
 
+
+/*
+ * @Content : 가장빨리 만나는 java8 5장 7번문제 
+ */
+
 public class Practice07 {
 
 	static LocalDate checkDate= LocalDate.now(); 
