@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 
 /*
- * @Content : 가장빨리 만나는 java8 5장 7번문제 
+ * @Content : 가장빨리 만나는 java8 5장 7번문제  test..
  */
 
 public class Practice07 {
