@@ -1,18 +1,13 @@
 package MeetFastest_java8.learing.learn03;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
-
-/*
- * @Content : 람다식에서 예외처리 
- * 				Sub08_3 처리기 handler를 이용해 두개의 스레드가 모두 싱행되도록 처리
- */
-
-public class Sub08_3 {
+public class Sub08_4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		orderAsyncSoltion(()->{
+		orderAsyncSoltion2(()->{
 			String test1 = "qwer";
 			int result = Integer.parseInt(test1);
 			System.out.println(result);
@@ -25,10 +20,11 @@ public class Sub08_3 {
 		});
 	}
 	
-	public static void orderAsyncSoltion(Runnable num1,Runnable num2,Consumer<Throwable> handler) {
+	public static void orderAsyncSoltion2(Supplier<T> num1,Consumer<T> num2,Consumer<Throwable> handler) {
 		Thread t = new Thread() {
 			public void run() {
 				try {
+					T result = 
 					num1.run();
 					num2.run();
 				}catch(Throwable e) {

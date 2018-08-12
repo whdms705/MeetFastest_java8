@@ -24,17 +24,14 @@ public class Sub08_2 {
 		// try 구문 내에 예외발생 경우가 없다.
 		//first.run()을 하는건  스레드가 하는거지, orderAsync가 아니다.
 		//출저 : http://ghksgp92.tistory.com/125
-		try {
+		
 			Thread t = new Thread() {
 				public void run() {
 					num1.run();
 					num2.run();
 				}
 			};
-			
-		}catch(Exception e) {
-			System.out.println(e);
-		}
+		
 		
 	}
 

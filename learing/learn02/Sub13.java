@@ -15,6 +15,8 @@ public class Sub13 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		// ∞Ê¿Ô ¡∂∞« Example
 		List<String> wordList = new ArrayList<String>();
 		wordList.add("aaaaaaaaaaaaaaaaa");
 		wordList.add("xxxxxxxx");
